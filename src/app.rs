@@ -3,6 +3,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 use not_found::NotFound;
+use blog_show::Blog;
+use test_show::Test;
 
 use crate::{components::{footer::Footer, header::Header}, pages::*};
 
@@ -15,10 +17,12 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/leptos-project.css"/>
         <Title text="Welcome to Leptos Blog"/>
         <Router>
-            <Header/>
+            // <Header/>
             <main class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans">
                 <Routes>
                     <Route path="" view=HomePage/>
+                    <Route path="/articles" view=Blog/>
+                    <Route path="/test" view=Test/>
                     <Route path="/*any" view=NotFound/>
                 </Routes>
             </main>

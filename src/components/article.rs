@@ -1,30 +1,30 @@
 use leptos::{component, view, IntoView};
 
 // 定义结构体，带生命周期 'a
-pub struct ArticleData<'a> {
-    title: &'a str,
-    date: &'a str,
-    category: &'a str,
-    content: &'a str,
-    author_name: &'a str,
-    author_title: &'a str,
-    author_image: &'a str,
+pub struct ArticleData{
+    pub title:  String,
+    pub date: String,
+    pub category: String,
+    pub content: String,
+    pub author_name:String,
+    pub author_title: String,
+    pub author_image:String,
 }
 
 #[component]
-pub fn Article<'articleData>(data: &'articleData ArticleData<'articleData>) -> impl IntoView {
-    let date = data.date.clone();
-    let category = data.category.clone();
-    let title = data.title.clone();
-    let content = data.content.clone();
-    let author_image = data.author_image.clone();
-    let author_name = data.author_name.clone();
-    let author_title = data.author_title.clone();
+pub fn Article(data:  ArticleData) -> impl IntoView {
+
+    let category = data.category;
+    let title = data.title;
+    let content = data.content;
+    let author_image = data.author_image;
+    let author_name = data.author_name;
+    let author_title = data.author_title;
 
     view! {
         <article class="flex max-w-xl flex-col items-start justify-between">
             <div class="flex items-center gap-x-4 text-xs">
-                 <time datetime={date.clone()} class="text-gray-500">{date}</time>
+                 <time datetime={author_title.clone()} class="text-gray-500">{author_title.clone()}</time>
                 <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{category}</a>
             </div>
             <div class="group relative">

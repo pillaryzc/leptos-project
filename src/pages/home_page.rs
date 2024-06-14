@@ -1,7 +1,4 @@
 use leptos::*;
-use crate::components::{footer::Footer, header::Header, intro::Intro, post_list::PostList};
-
-
 
 #[component]
 pub fn HomePage() -> impl IntoView {
